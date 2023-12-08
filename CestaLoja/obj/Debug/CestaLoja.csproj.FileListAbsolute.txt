@@ -1,0 +1,12 @@
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\bin\Debug\CestaLoja.exe.config
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\bin\Debug\CestaLoja.exe
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\bin\Debug\CestaLoja.pdb
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.csproj.AssemblyReference.cache
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.Form1.resources
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.Properties.Resources.resources
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.csproj.GenerateResource.cache
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.exe
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.pdb
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.form2.resources
+C:\Users\Aluno\source\repos\CestaLoja\CestaLoja\obj\Debug\CestaLoja.Form3.resources
