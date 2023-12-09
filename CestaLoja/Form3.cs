@@ -17,7 +17,6 @@ namespace CestaLoja
     {
         Listas lista;
 
-        List<Produto> radio;
         public Form3()
         {
             InitializeComponent();
@@ -31,7 +30,8 @@ namespace CestaLoja
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            radio = lista.Lista_pais;
+            AtualizaListView(lista.Lista_pais);
+            AtualizaListViewProdutos(lista.Lista_produtos, lista.Lista_pais);
         }
 
         private void listDefinidas_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,23 +50,52 @@ namespace CestaLoja
             listDefinidas.Columns.Add("ID");
             listDefinidas.Columns.Add("Nome");
             listDefinidas.Columns.Add("Preço");
-            AtualizaListView(); //chama a função para atulizar o listview
+
+            listProdutos.View = View.Details;
+            listProdutos.Columns.Add("ID");
+            listProdutos.Columns.Add("Nome");
+            listProdutos.Columns.Add("Preço");
+
         }
 
-        void AtualizaListView() //recebe cada produto por paramentro
+        void AtualizaListView(List<Produto> lista) //recebe cada produto por paramentro
         {
             // Limpa os itens da lista
             listDefinidas.Items.Clear();
 
-
             // Percorre os itens da lista, adicionando no list View
-            foreach (Produto produto in radio)
+            foreach (Produto produto in lista)
             {
                 AdicionarItemListView(produto);
             }
+
         }
 
-        void AdicionarItemListView(Produto produto)
+        void AtualizaListViewProdutos(List<Produto> listaproduto, List<Produto> lista) //recebe cada produto por paramentro
+        {
+            // Limpa os itens da lista
+            listProdutos.Items.Clear();
+
+            // Percorre os itens da lista, adicionando no list View
+            foreach (Produto produto in listaproduto)
+            {
+                foreach (Produto definida in lista)
+                {
+                    if (produto.Id != definida.Id)
+                    {
+                        AdicionarItemListViewProdutos(produto);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    
+                }
+            }
+
+        }
+
+            void AdicionarItemListView(Produto produto)
         {
             ListViewItem item = new ListViewItem(produto.Id.ToString());
             item.SubItems.Add(produto.Nome);
@@ -75,24 +104,37 @@ namespace CestaLoja
 
         }
 
+        void AdicionarItemListViewProdutos(Produto produto)
+        {
+            
+            ListViewItem item2 = new ListViewItem(produto.Id.ToString());
+            item2.SubItems.Add(produto.Nome);
+            item2.SubItems.Add(produto.Preco.ToString("c"));
+            listProdutos.Items.Add(item2);
+        }
+
         private void radioNatal_CheckedChanged(object sender, EventArgs e)
         {
-         
+            AtualizaListView(lista.Lista_natal);
+            AtualizaListViewProdutos(lista.Lista_produtos, lista.Lista_natal);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            radio = lista.Lista_maes;
+            AtualizaListView(lista.Lista_maes);
+            AtualizaListViewProdutos(lista.Lista_produtos, lista.Lista_maes);
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            radio = lista.Lista_namorados;
+          AtualizaListView(lista.Lista_namorados);
+          AtualizaListViewProdutos(lista.Lista_produtos, lista.Lista_namorados);
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            radio = lista.Lista_aniversario;
+          AtualizaListView(lista.Lista_aniversario);
+          AtualizaListViewProdutos(lista.Lista_produtos, lista.Lista_aniversario);
         }
     }
 }
